@@ -8,19 +8,18 @@ import FirstTimesSection from './components/FirstTimesSection';
 import ReasonsSection from './components/ReasonsSection';
 import GallerySection from './components/GallerySection';
 import LoveLetterSection from './components/LoveLetterSection';
+import PromiseSection from './components/PromiseSection';
 import FloatingPetals from './components/FloatingPetals';
 import { useSheetData } from './hooks/useSheetData';
 import { defaultData } from './data/defaultData';
 import './index.css';
 
 // ============================================================
-// 🔧 CONFIG — Paste your Google Sheet URL here after setup
+// 🔧 CONFIG — Google Sheet URL
 // ============================================================
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/11L9sFzBoEltSxsX6k7Dl8eZ4Iz_j_zXoLT_b9GEO0Xs/edit?usp=sharing';
-// Leave as 'YOUR_SHEET_URL_HERE' to use default data below
 // ============================================================
 
-// Sheet GID (tab IDs) — update if your tabs are in different order
 const GIDS = {
   config:   '0',
   timeline: '1',
@@ -30,7 +29,6 @@ const GIDS = {
   songs:    '5',
 };
 
-// Merge sheet data with defaults (sheet takes priority when available)
 function mergeData(sheetRows, defaultRows) {
   if (!sheetRows || sheetRows.length === 0) return defaultRows;
   return sheetRows;
@@ -45,13 +43,10 @@ function useAllSheetData(url) {
   const songs    = useSheetData(url, GIDS.songs);
 
   const loading = config.loading || timeline.loading || reasons.loading;
-  const usingSheet = url && !url.includes('YOUR_SHEET_URL_HERE');
-
   const configData = (config.data && config.data[0]) ? config.data[0] : null;
 
   return {
     loading,
-    usingSheet,
     config: configData ? {
       anniversary_date: configData.anniversary_date || defaultData.config.anniversary_date,
       password:         configData.password         || defaultData.config.password,
@@ -113,6 +108,7 @@ export default function App() {
         <ReasonsSection reasons={reasons} />
         <GallerySection gallery={gallery} />
         <LoveLetterSection config={config} songs={songs} />
+        <PromiseSection nameB={config.name_b} />
       </main>
     </>
   );

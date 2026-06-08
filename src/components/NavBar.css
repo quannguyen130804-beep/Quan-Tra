@@ -126,3 +126,20 @@
   .nav-links { display: none; }
   .nav-hamburger { display: block; }
 }
+
+/* Home icon button */
+.nav-home-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  line-height: 1;
+}
+
+.nav-home-btn:hover {
+  transform: scale(1.15);
+  background: rgba(192, 56, 79, 0.12);
+}

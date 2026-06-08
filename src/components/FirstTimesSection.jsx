@@ -40,13 +40,26 @@ function FirstCard({ item, index }) {
             <p className="first-title">{item.title}</p>
             <p className="first-tap">chạm để xem 💗</p>
           </div>
-          <div className="first-badge">lần đầu</div>
+          <div className="first-badge">LẦN ĐẦU</div>
         </div>
-        {/* Back */}
+
+        {/* Back - hiện ảnh nếu có, nếu không thì hiện icon */}
         <div className="first-card-back">
-          <span className="back-icon">{item.icon}</span>
-          <p className="back-title">{item.title}</p>
-          <p className="back-tap">chạm để quay lại</p>
+          {item.image ? (
+            <>
+              <img src={item.image} alt={item.title} className="back-img" />
+              <div className="back-overlay">
+                <p className="back-title">{item.title}</p>
+                <p className="back-tap">chạm để quay lại</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <span className="back-icon">{item.icon}</span>
+              <p className="back-title">{item.title}</p>
+              <p className="back-tap">chạm để quay lại</p>
+            </>
+          )}
         </div>
       </div>
     </div>

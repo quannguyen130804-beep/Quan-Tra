@@ -36,7 +36,7 @@
   border: 1px solid rgba(224, 160, 170, 0.15);
   border-radius: 24px;
   padding: 52px 44px;
-  max-width: 420px;
+  max-width: 480px;
   width: 100%;
   text-align: center;
   position: relative;
@@ -76,12 +76,15 @@
   color: #fce8ec;
   margin-bottom: 10px;
   letter-spacing: 0.02em;
+  white-space: nowrap;   /* ← fix xuống dòng */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .login-title span {
   color: #c0384f;
   font-style: italic;
-  margin: 0 8px;
+  margin: 0 10px;
 }
 
 .login-subtitle {
@@ -188,9 +191,7 @@
   background: linear-gradient(135deg, #a01f38, #d44060);
 }
 
-.login-btn:active {
-  transform: translateY(0);
-}
+.login-btn:active { transform: translateY(0); }
 
 .btn-heart {
   font-size: 18px;
@@ -205,7 +206,7 @@
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 480px) {
-  .login-card { padding: 40px 28px; }
-  .login-title { font-size: 26px; }
+@media (max-width: 520px) {
+  .login-card { padding: 40px 20px; }
+  .login-title { font-size: 24px; }
 }

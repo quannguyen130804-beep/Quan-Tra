@@ -3,23 +3,23 @@ import { useState, useEffect } from 'react';
 import './NavBar.css';
 
 const NAV_ITEMS = [
-  { id: 'home', label: '🏠', full: 'Home' },
+  { id: 'home',     label: '🏠', full: 'Home' },
   { id: 'timeline', label: '⏳', full: 'Timeline' },
-  { id: 'firsts', label: '✨', full: 'First times' },
-  { id: 'reasons', label: '💗', full: 'Reasons' },
-  { id: 'gallery', label: '📷', full: 'Gallery' },
-  { id: 'letter', label: '💌', full: 'Letter' },
+  { id: 'firsts',   label: '✨', full: 'First times' },
+  { id: 'reasons',  label: '💗', full: 'Reasons' },
+  { id: 'gallery',  label: '📷', full: 'Gallery' },
+  { id: 'letter',   label: '💌', full: 'Letter' },
+  { id: 'promise',  label: '💍', full: 'Promise' },
 ];
 
 export default function NavBar({ nameA }) {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState('home');
-  const [open, setOpen] = useState(false);
+  const [active, setActive]     = useState('home');
+  const [open, setOpen]         = useState(false);
 
   useEffect(() => {
     function onScroll() {
       setScrolled(window.scrollY > 60);
-      // Detect active section
       const sections = NAV_ITEMS.map(n => document.getElementById(n.id)).filter(Boolean);
       for (let i = sections.length - 1; i >= 0; i--) {
         if (window.scrollY >= sections[i].offsetTop - 200) {
@@ -41,9 +41,10 @@ export default function NavBar({ nameA }) {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-inner">
-        <span className="nav-brand" onClick={() => scrollTo('home')}>
-          {nameA} ♥
-        </span>
+        {/* House icon thay cho text */}
+        <button className="nav-home-btn" onClick={() => scrollTo('home')} aria-label="Về trang chủ">
+          🏡
+        </button>
 
         {/* Desktop nav */}
         <div className="nav-links">
@@ -65,7 +66,6 @@ export default function NavBar({ nameA }) {
         </button>
       </div>
 
-      {/* Mobile drawer */}
       {open && (
         <div className="nav-drawer">
           {NAV_ITEMS.map(item => (
