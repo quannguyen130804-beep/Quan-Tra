@@ -1,0 +1,30 @@
+/* FloatingPetals.css */
+.petals-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  animation: petalFall linear infinite;
+  will-change: transform;
+  opacity: 0;
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translateY(-30px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  5% { opacity: 0.5; }
+  45% { transform: translateY(45vh) rotate(360deg) translateX(30px); }
+  90% { opacity: 0.3; }
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(-20px);
+    opacity: 0;
+  }
+}

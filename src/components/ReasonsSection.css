@@ -1,0 +1,116 @@
+/* ReasonsSection.css */
+.reasons-section {
+  padding: 100px 24px;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.reasons-decor-left,
+.reasons-decor-right {
+  position: absolute;
+  top: 50%;
+  font-size: 300px;
+  color: rgba(192, 56, 79, 0.03);
+  font-family: serif;
+  pointer-events: none;
+  line-height: 1;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.reasons-decor-left { left: -80px; }
+.reasons-decor-right { right: -80px; }
+
+.reasons-section .section-eyebrow { color: var(--rose-mid); }
+.reasons-section .section-eyebrow .eyebrow-line { background: rgba(192,56,79,0.4); }
+.reasons-section .section-title { color: #fce8ec; }
+.reasons-section .title-italic { color: var(--rose-light); }
+
+/* List */
+.reasons-list {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.reason-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(252, 232, 236, 0.06);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
+  cursor: default;
+}
+
+.reason-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reason-item:first-child { border-top: 1px solid rgba(252, 232, 236, 0.06); }
+
+/* Number */
+.reason-number {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 300;
+  color: rgba(192, 56, 79, 0.3);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 72px;
+  text-align: right;
+  transition: all 0.3s ease;
+}
+
+.reason-item:hover .reason-number {
+  color: var(--rose-mid);
+  transform: scale(1.05);
+}
+
+/* Divider */
+.reason-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(192, 56, 79, 0.2);
+  flex-shrink: 0;
+}
+
+/* Text */
+.reason-text {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 24px);
+  color: rgba(252, 232, 236, 0.7);
+  line-height: 1.5;
+  flex: 1;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.reason-text.hovered {
+  color: #fce8ec;
+  font-style: italic;
+}
+
+/* Heart */
+.reason-heart {
+  font-size: 18px;
+  color: rgba(192, 56, 79, 0);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.reason-item:hover .reason-heart {
+  color: var(--rose-mid);
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .reason-item { gap: 16px; }
+  .reason-number { min-width: 48px; font-size: 40px; }
+  .reason-heart { display: none; }
+}

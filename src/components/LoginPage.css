@@ -1,0 +1,211 @@
+/* LoginPage.css */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0a0e 0%, #2d0f18 40%, #1a0a0e 100%);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-bg-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bg-heart {
+  position: absolute;
+  bottom: -50px;
+  animation: floatHeart linear infinite;
+  opacity: 0.15;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.15; }
+  90% { opacity: 0.1; }
+  100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.login-card {
+  background: rgba(253, 246, 240, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(224, 160, 170, 0.15);
+  border-radius: 24px;
+  padding: 52px 44px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03);
+  transition: transform 0.3s ease;
+}
+
+.login-card.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px) rotate(-1deg); }
+  40% { transform: translateX(10px) rotate(1deg); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+.login-icon {
+  font-size: 52px;
+  margin-bottom: 20px;
+  display: block;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.login-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #fce8ec;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.login-title span {
+  color: #c0384f;
+  font-style: italic;
+  margin: 0 8px;
+}
+
+.login-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  color: rgba(252, 232, 236, 0.5);
+  font-size: 14px;
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 44px 14px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(224, 160, 170, 0.2);
+  border-radius: 12px;
+  color: #fce8ec;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.login-input::placeholder {
+  color: rgba(252, 232, 236, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.login-input:focus {
+  border-color: rgba(192, 56, 79, 0.6);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 0 0 3px rgba(192, 56, 79, 0.12);
+}
+
+.login-input-wrap.error .login-input {
+  border-color: rgba(192, 56, 79, 0.8);
+  box-shadow: 0 0 0 3px rgba(192, 56, 79, 0.2);
+}
+
+.input-lock {
+  position: absolute;
+  right: 14px;
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.login-error {
+  color: #e8a0aa;
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.login-hint {
+  color: rgba(201, 169, 110, 0.8);
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-btn {
+  margin-top: 8px;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #8b1a2f, #c0384f);
+  border: none;
+  border-radius: 12px;
+  color: #fce8ec;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(192, 56, 79, 0.35);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(192, 56, 79, 0.5);
+  background: linear-gradient(135deg, #a01f38, #d44060);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.btn-heart {
+  font-size: 18px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.login-footer {
+  margin-top: 28px;
+  font-family: 'Caveat', cursive;
+  color: rgba(252, 232, 236, 0.3);
+  font-size: 15px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 480px) {
+  .login-card { padding: 40px 28px; }
+  .login-title { font-size: 26px; }
+}

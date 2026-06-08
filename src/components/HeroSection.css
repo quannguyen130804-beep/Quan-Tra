@@ -1,0 +1,245 @@
+/* HeroSection.css */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #1a0a0e 0%, #2d0f18 50%, #1a0a0e 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 60px 24px;
+}
+
+/* Soft radial glow */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(192,56,79,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-petal {
+  position: absolute;
+  top: -30px;
+  font-size: 20px;
+  opacity: 0;
+  animation: petalDrift linear infinite;
+}
+
+@keyframes petalDrift {
+  0% { transform: translateY(-30px) rotate(0deg); opacity: 0; }
+  5% { opacity: 0.4; }
+  90% { opacity: 0.2; }
+  100% { transform: translateY(110vh) rotate(540deg) translateX(40px); opacity: 0; }
+}
+
+/* Content */
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 720px;
+  width: 100%;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Eyebrow */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(192, 56, 79, 0.8);
+}
+
+.eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(192, 56, 79, 0.4);
+}
+
+/* Names */
+.hero-names {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(48px, 10vw, 96px);
+  font-weight: 300;
+  color: #fce8ec;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.name-a { animation: fadeInUp 0.8s 0.2s both; }
+.name-b { animation: fadeInUp 0.8s 0.5s both; font-style: italic; color: #e8a0aa; }
+
+.name-sep {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: fadeInUp 0.8s 0.35s both;
+}
+
+.sep-line {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(192,56,79,0.6), transparent);
+}
+
+.sep-heart {
+  color: #c0384f;
+  font-size: 20px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Since */
+.hero-since {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: rgba(201, 169, 110, 0.8);
+  margin-bottom: 44px;
+  animation: fadeInUp 0.8s 0.7s both;
+  letter-spacing: 0.08em;
+}
+
+/* Counter */
+.counter-wrap {
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s 0.9s both;
+}
+
+.counter-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(252, 232, 236, 0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.counter-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+}
+
+.counter-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 300;
+  color: #fce8ec;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.counter-num.seconds {
+  color: #e8a0aa;
+}
+
+.counter-unit {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(252, 232, 236, 0.35);
+  margin-top: 4px;
+}
+
+.counter-dot {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  color: rgba(192, 56, 79, 0.5);
+  line-height: 1;
+  padding-bottom: 16px;
+  align-self: flex-end;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: rgba(252, 232, 236, 0.4);
+  font-style: italic;
+  margin-bottom: 52px;
+  animation: fadeInUp 0.8s 1.1s both;
+}
+
+/* Scroll hint */
+.scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInUp 0.8s 1.3s both;
+}
+
+.scroll-hint span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(252, 232, 236, 0.2);
+}
+
+.scroll-arrow {
+  font-size: 18px;
+  color: rgba(192, 56, 79, 0.4);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@media (max-width: 480px) {
+  .counter-grid { gap: 4px; }
+  .counter-item { min-width: 52px; }
+  .counter-dot { font-size: 28px; }
+}

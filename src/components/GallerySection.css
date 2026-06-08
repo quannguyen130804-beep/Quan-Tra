@@ -1,0 +1,112 @@
+/* GallerySection.css */
+.gallery-section {
+  padding: 100px 24px;
+  background: var(--rose-pale);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle dot pattern */
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--rose-blush) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.gallery-hand-text {
+  font-family: var(--font-hand);
+  font-size: 20px;
+  color: var(--rose-deep);
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* Polaroid wall */
+.polaroid-wall {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+}
+
+/* Polaroid card */
+.polaroid {
+  background: white;
+  padding: 12px 12px 40px;
+  box-shadow: 0 4px 16px rgba(139, 26, 47, 0.12), 0 1px 4px rgba(0,0,0,0.08);
+  transform: rotate(var(--rotation, 0deg)) scale(0.85);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 190px;
+}
+
+.polaroid.visible {
+  opacity: 1;
+  transform: rotate(var(--rotation, 0deg)) scale(1);
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.08) translateY(-8px) !important;
+  box-shadow: 0 16px 40px rgba(139, 26, 47, 0.25);
+  z-index: 10;
+}
+
+.polaroid-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--rose-blush);
+}
+
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.polaroid-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--rose-blush), var(--rose-pale));
+}
+
+.polaroid-placeholder span { font-size: 32px; opacity: 0.5; }
+
+.polaroid-placeholder p {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--ink-muted);
+  text-align: center;
+  opacity: 0.6;
+}
+
+.polaroid-caption {
+  font-family: var(--font-hand);
+  font-size: 15px;
+  color: var(--ink-soft);
+  text-align: center;
+  padding-top: 10px;
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  .polaroid { width: 148px; padding: 10px 10px 32px; }
+  .polaroid-caption { font-size: 13px; }
+}
