@@ -1,0 +1,192 @@
+/* FirstTimesSection.css */
+.firsts-section {
+  padding: 100px 24px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.firsts-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--rose-pale) 50%, var(--cream) 100%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.section-subtitle {
+  font-family: var(--font-hand);
+  font-size: 18px;
+  color: var(--rose-mid);
+  margin-top: 8px;
+}
+
+/* Grid */
+.firsts-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card */
+.first-card {
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  perspective: 1000px;
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.first-card.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.first-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+}
+
+.first-card.flipped .first-card-inner {
+  transform: rotateY(180deg);
+}
+
+.first-card-front,
+.first-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Front */
+.first-card-front {
+  background: var(--ink);
+}
+
+.first-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.first-card:hover .first-img { transform: scale(1.05); }
+
+.first-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--rose-deep), var(--rose-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first-icon {
+  font-size: 48px;
+  opacity: 0.7;
+}
+
+.first-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 16px 16px;
+  background: linear-gradient(to top, rgba(26,10,14,0.9) 0%, transparent 100%);
+}
+
+.first-title {
+  font-family: var(--font-hand);
+  font-size: 17px;
+  color: #fce8ec;
+  line-height: 1.3;
+}
+
+.first-tap {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: rgba(252, 232, 236, 0.45);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+.first-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(192, 56, 79, 0.85);
+  color: #fce8ec;
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* Back */
+.first-card-back {
+  background: linear-gradient(135deg, var(--rose-deep), var(--ink));
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.back-icon { font-size: 44px; }
+
+.back-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: #fce8ec;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.back-tap {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: rgba(252, 232, 236, 0.35);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 480px) {
+  .firsts-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* Back card with image */
+.back-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.back-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 16px 16px;
+  background: linear-gradient(to top, rgba(26,10,14,0.9) 0%, transparent 100%);
+  border-radius: 0 0 16px 16px;
+  text-align: center;
+}

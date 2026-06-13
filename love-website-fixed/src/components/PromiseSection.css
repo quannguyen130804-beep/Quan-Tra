@@ -1,0 +1,312 @@
+/* PromiseSection.css */
+.promise-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: linear-gradient(160deg, #1a0a0e 0%, #2d0f18 60%, #1a0a0e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.promise-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(192,56,79,0.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Card */
+.promise-card {
+  background: rgba(253, 246, 240, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(224, 160, 170, 0.15);
+  border-radius: 28px;
+  padding: 56px 48px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+}
+
+.promise-header { text-align: center; margin-bottom: 40px; }
+
+.promise-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(192, 56, 79, 0.7);
+}
+
+.eyebrow-line-p {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: rgba(192, 56, 79, 0.4);
+}
+
+.promise-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fce8ec;
+  margin-bottom: 16px;
+}
+
+.promise-question {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(252, 232, 236, 0.7);
+  line-height: 1.7;
+}
+
+.promise-question em {
+  color: #e8a0aa;
+  font-style: italic;
+}
+
+/* Body */
+.promise-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Checkbox */
+.promise-checkbox-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(224, 160, 170, 0.15);
+  background: rgba(255,255,255,0.03);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.promise-checkbox-wrap.checked {
+  border-color: rgba(192, 56, 79, 0.5);
+  background: rgba(192, 56, 79, 0.08);
+}
+
+.promise-checkbox-input { display: none; }
+
+.custom-checkbox {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 2px solid rgba(224, 160, 170, 0.4);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.promise-checkbox-wrap.checked .custom-checkbox {
+  background: linear-gradient(135deg, #8b1a2f, #c0384f);
+  border-color: transparent;
+}
+
+.checkmark {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  animation: popIn 0.2s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.checkbox-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #fce8ec;
+  letter-spacing: 0.01em;
+}
+
+/* Signature area */
+.sig-area {
+  opacity: 0.4;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.sig-area.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sig-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(252, 232, 236, 0.4);
+  margin-bottom: 10px;
+}
+
+.canvas-wrap {
+  position: relative;
+  border: 1px solid rgba(224, 160, 170, 0.2);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  cursor: crosshair;
+}
+
+.sig-canvas {
+  display: block;
+  width: 100%;
+  height: 120px;
+  touch-action: none;
+}
+
+.sig-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: rgba(252, 232, 236, 0.18);
+  pointer-events: none;
+}
+
+.clear-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: rgba(252, 232, 236, 0.3);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.clear-btn:hover { color: rgba(252, 232, 236, 0.6); }
+
+/* Confirm button */
+.confirm-btn {
+  padding: 16px 32px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.confirm-btn.disabled {
+  background: rgba(255,255,255,0.06);
+  color: rgba(252, 232, 236, 0.2);
+  cursor: not-allowed;
+}
+
+.confirm-btn.ready {
+  background: linear-gradient(135deg, #8b1a2f, #c0384f);
+  color: #fce8ec;
+  box-shadow: 0 4px 24px rgba(192, 56, 79, 0.4);
+}
+
+.confirm-btn.ready:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(192, 56, 79, 0.55);
+}
+
+/* Confirmed screen */
+.confirmed-card {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.confetti-hearts {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  pointer-events: none;
+}
+
+.conf-heart {
+  position: absolute;
+  font-size: 24px;
+  animation: confettiFall 2s ease-out both;
+}
+
+@keyframes confettiFall {
+  from { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+  30% { opacity: 1; }
+  to { transform: translateY(80px) rotate(360deg); opacity: 0; }
+}
+
+.confirmed-icon {
+  font-size: 72px;
+  display: block;
+  margin-bottom: 24px;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.confirmed-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: #fce8ec;
+  margin-bottom: 20px;
+}
+
+.confirmed-msg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: rgba(252, 232, 236, 0.75);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.confirmed-sign {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: #e8a0aa;
+}
+
+@media (max-width: 520px) {
+  .promise-card { padding: 40px 24px; }
+  .promise-title { font-size: 32px; }
+}
