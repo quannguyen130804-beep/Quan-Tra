@@ -22,11 +22,11 @@ const SHEET_URL = 'https://docs.google.com/spreadsheets/d/11L9sFzBoEltSxsX6k7Dl8
 
 const GIDS = {
   config:   '0',
-  timeline: '1',
-  reasons:  '2',
-  gallery:  '3',
-  firsts:   '4',
-  songs:    '5',
+  timeline: '966823460',
+  reasons:  '1346983837',
+  gallery:  '785856525',
+  firsts:   '1138995848',
+  songs:    '1292083396',
 };
 
 function mergeData(sheetRows, defaultRows) {
