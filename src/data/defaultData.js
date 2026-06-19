@@ -10,7 +10,7 @@ export const defaultData = {
     name_a: 'Minh Quân',
     name_b: 'Thanh Trà',
     tagline: 'Feel home in your heart',
-    love_letter: `Trà ơi,\n\nEm là điều tuyệt vời nhất xảy ra với anh.\n\nTừ cái ngày anh tỏ tình lần đầu dù biết em chưa sẵn sàng, đến hôm nay — anh không hối hận một giây nào. Mỗi khoảnh khắc bên em, dù là lúc 2 đứa nấu ăn ngắm hoàng hôn, hay đơn giản chỉ là ngồi bên nhau im lặng — đều trở thành ký ức anh trân trọng nhất.\n\nEm thông minh, sáng tạo, dịu dàng. Em luôn cho anh biết em đang nghĩ gì, không bao giờ để anh đoán mò. Em nhớ mọi chi tiết nhỏ về anh dù em hay nói mình hay quên. Em sẵn sàng đồng hành với anh trong mọi việc.\n\nAnh muốn tụi mình còn nhiều hành trình nữa, nhiều mùa Noel nữa, nhiều lần đầu tiên nữa.\n\nMãi yêu em,\nMinh Quân 🌹`,
+    love_letter: `Trà ơi,\n\nBạn là điều tuyệt vời nhất xảy ra với mình.\n\nTừ cái ngày mình tỏ tình lần đầu dù bạn chưa sẵn sàng cho đến hôm nay mình vẫn không hối hận một giây nào. Mỗi khoảnh khắc bên bạn, từ lúc nấu ăn, ngắm hoàng hôn, hay đơn giản chỉ là ngồi bên nhau nhìn trời đều trở thành ký ức mình trân trọng nhất.\n\nBạn thông minh, sáng tạo, dịu dàng. Bạn luôn cho anh biết bạn đang nghĩ gì, không bao giờ để mình đoán mò. Bạn nhớ mọi chi tiết nhỏ về mình dù bạn  hay quên. Bạn sẵn sàng đồng hành với mình trong mọi việc.\n\nMình muốn tụi mình đi cùng nhau ở nhiều hành trình, qua nhiều cột mốc, nhiều lần đầu tiên nữa.\n\nMãi yêu bạn,\nMinh Quân 🌹`,
   },
   timeline: [
     { date: '14/11/2025', title: 'Lần đầu tỏ tình', description: 'Mình tỏ tình lần đầu nhưng bạn chưa sẵn sàng, nên mình sẽ đợi', emoji: '🫶', image: '' },
