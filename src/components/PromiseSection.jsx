@@ -86,12 +86,12 @@ export default function PromiseSection({ nameB }) {
               <span className="eyebrow-line-p" />
             </div>
             <h2 className="promise-title">
-              {nameB || 'Em'} ơi,
+              {nameB || 'Bạn'} ơi,
             </h2>
             <p className="promise-question">
-              Em có cảm thấy hạnh phúc và muốn
+              Bạn có cảm thấy hạnh phúc và muốn
               <br />
-              <em>tiếp tục đồng hành cùng anh không?</em>
+              <em>tiếp tục đồng hành cùng mình không?</em>
             </p>
           </div>
 
@@ -108,7 +108,7 @@ export default function PromiseSection({ nameB }) {
                 {agreed && <span className="checkmark">✓</span>}
               </div>
               <span className="checkbox-label">
-                Có, em muốn ở bên anh 💗
+                Cóoooo 💗
               </span>
             </label>
 
@@ -162,10 +162,10 @@ export default function PromiseSection({ nameB }) {
             ))}
           </div>
           <span className="confirmed-icon">💍</span>
-          <h2 className="confirmed-title">Cảm ơn em!</h2>
+          <h2 className="confirmed-title">Cảm ơn bạn nhó!</h2>
           <p className="confirmed-msg">
-            Anh hứa sẽ luôn ở bên em,<br />
-            yêu em mỗi ngày nhiều hơn ngày hôm qua. 🌹
+            Mình hứa sẽ luôn ở bên bạn,<br />
+            và yêu bạn mỗi ngà. 🌹y
           </p>
           <p className="confirmed-sign">— Minh Quân</p>
         </div>
